@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_po_quick_process_form" model="ir.ui.view">
+        <field name="name">po.quick.process.form</field>
+        <field name="model">po.quick.process</field>
+        <field name="arch" type="xml">
+            <form string="Quick Process Purchase Order">
+                <!-- Hidden fields -->
+                <field name="currency_id" invisible="1"/>
+                <field name="pos_origin" invisible="1"/>
+                <field name="pos_paid_with_cash" invisible="1"/>
+                <field name="is_confirmed" invisible="1"/>
+                <field name="all_received" invisible="1"/>
+                <field name="bill_created" invisible="1"/>
+                <field name="bill_posted" invisible="1"/>
+                <field name="fully_paid" invisible="1"/>
+                <field name="outstanding_debit_count" invisible="1"/>
+
+                <sheet>
+                    <!-- Header -->
+                    <div class="oe_title">
+                        <h1>
+                            <field name="purchase_order_id" readonly="1" options="{'no_open': True}"/>
+                        </h1>
+                    </div>
+
+                    <!-- PO Summary -->
+                    <group>
+                        <group>
+                            <field name="partner_id" readonly="1"/>
+                            <field name="date_order" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="po_state" readonly="1"/>
+                            <field name="amount_total" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <notebook>
+                        <!-- TAB 1: Review PO -->
+                        <page string="1. Review PO" name="review">
+                            <field name="order_line_ids" readonly="1" nolabel="1">
+                                <list>
+                                    <field name="product_id"/>
+                                    <field name="product_qty"/>
+                                    <field name="price_unit"/>
+                                    <field name="price_subtotal" sum="Total"/>
+                                </list>
+                            </field>
+                            <group invisible="is_confirmed">
+                                <button name="action_confirm_po" type="object"
+                                        string="Confirm Purchase Order" class="btn-primary oe_highlight"/>
+                            </group>
+                            <group invisible="not is_confirmed">
+                                <div class="alert alert-success" role="alert">
+                                    <strong>✓ Purchase Order Confirmed</strong>
+                                </div>
+                            </group>
+                        </page>
+
+                        <!-- TAB 2: Receive Inventory -->
+                        <page string="2. Receive" name="receive">
+                            <group>
+                                <group>
+                                    <field name="picking_ids" widget="many2many_tags" readonly="1"/>
+                                    <field name="all_received" readonly="1" widget="boolean_toggle"/>
+                                </group>
+                            </group>
+                            <group>
+                                <button name="action_view_picking" type="object"
+                                        string="View Receipts" class="btn-info"/>
+                                <button name="action_receive_all" type="object"
+                                        string="Receive All Items" class="btn-success oe_highlight"
+                                        invisible="all_received"/>
+                            </group>
+                        </page>
+
+                        <!-- TAB 3: Create Bill -->
+                        <page string="3. Bill" name="bill">
+                            <group>
+                                <group>
+                                    <field name="invoice_ids" widget="many2many_tags" readonly="1"/>
+                                    <field name="bill_created" readonly="1" widget="boolean_toggle"/>
+                                    <field name="pos_bill_reference" readonly="1" invisible="not pos_origin"/>
+                                </group>
+                            </group>
+                            <group>
+                                <button name="action_create_bill" type="object"
+                                        string="Create Bill" class="btn-success oe_highlight"
+                                        invisible="bill_created"/>
+                                <button name="action_view_bill" type="object"
+                                        string="View Bill" class="btn-info"
+                                        invisible="not bill_created"/>
+                                <button name="action_post_bill" type="object"
+                                        string="Post Bill" class="btn-warning oe_highlight"
+                                        invisible="bill_posted or not bill_created"/>
+                            </group>
+                            <group invisible="not bill_posted">
+                                <div class="alert alert-success" role="alert">
+                                    <strong>✓ Bill Posted</strong>
+                                </div>
+                            </group>
+                        </page>
+
+                        <!-- TAB 4: Payment -->
+                        <page string="4. Payment" name="payment">
+                            <group>
+                                <group string="Bill Status">
+                                    <field name="amount_due" readonly="1"/>
+                                    <field name="fully_paid" readonly="1" widget="boolean_toggle"/>
+                                </group>
+                            </group>
+
+                            <!-- Outstanding Debits Section -->
+                            <group string="Outstanding Payments" invisible="outstanding_debit_count == 0 or fully_paid">
+                                <field name="outstanding_debit_ids" nolabel="1"
+                                       context="{'wizard_id': id}">
+                                    <list>
+                                        <field name="date"/>
+                                        <field name="move_id" string="Journal Entry"/>
+                                        <field name="name" string="Label"/>
+                                        <field name="amount_residual" string="Amount"/>
+                                        <button name="action_reconcile_with_po_bill" type="object"
+                                                string="Reconcile" class="btn-warning"
+                                                icon="fa-link"/>
+                                    </list>
+                                </field>
+                            </group>
+
+                            <separator string="Or Register New Payment" invisible="fully_paid"/>
+
+                            <group string="New Payment" invisible="fully_paid">
+                                <group>
+                                    <field name="payment_amount"/>
+                                    <field name="payment_journal_id"/>
+                                </group>
+                                <group>
+                                    <field name="payment_date"/>
+                                    <field name="payment_memo" placeholder="Payment reference..."/>
+                                </group>
+                            </group>
+                            <group invisible="fully_paid">
+                                <button name="action_register_payment" type="object"
+                                        string="Register Payment" class="btn-success oe_highlight"/>
+                            </group>
+
+                            <group invisible="not fully_paid">
+                                <div class="alert alert-success" role="alert">
+                                    <strong>✓ Bill Fully Paid</strong>
+                                </div>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+
+                <footer>
+                    <button name="action_done" type="object" string="Close" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action to open wizard -->
+    <record id="action_po_quick_process" model="ir.actions.act_window">
+        <field name="name">Quick Process</field>
+        <field name="res_model">po.quick.process</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_purchase_order_id': active_id}</field>
+    </record>
+
+</odoo>

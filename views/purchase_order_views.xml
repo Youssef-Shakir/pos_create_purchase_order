@@ -71,6 +71,11 @@
                         invisible="not pos_receipt_image">
                     <span class="o_stat_text">Receipt Image</span>
                 </button>
+                <button name="%(action_po_quick_process)d" type="action"
+                        class="oe_stat_button" icon="fa-bolt"
+                        invisible="state == 'cancel'">
+                    <span class="o_stat_text">Quick Process</span>
+                </button>
             </xpath>
         </field>
     </record>

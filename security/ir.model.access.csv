@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_purchase_order_pos_user,purchase.order.pos.user,purchase.model_purchase_order,point_of_sale.group_pos_user,1,1,1,0
 access_purchase_order_line_pos_user,purchase.order.line.pos.user,purchase.model_purchase_order_line,point_of_sale.group_pos_user,1,1,1,0
+access_po_quick_process_user,po.quick.process.user,model_po_quick_process,point_of_sale.group_pos_user,1,1,1,1
+access_po_quick_process_manager,po.quick.process.manager,model_po_quick_process,purchase.group_purchase_manager,1,1,1,1

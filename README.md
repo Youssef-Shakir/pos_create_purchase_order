@@ -10,6 +10,7 @@ Create Purchase Orders directly from the Point of Sale screen in Odoo 18.
 - **Pay with POS Cash**: Option to pay vendor directly from POS cash drawer
 - **Receipt Image Capture**: Take photo or upload vendor receipt/invoice image
 - **Bill Reference**: Enter vendor bill/invoice reference number
+- **Quick Process Wizard**: Complete PO workflow in one screen (Review → Receive → Bill → Payment)
 - **POS Integration**: View purchase orders created from each POS config
 - **Filter & Group**: Filter and group purchase orders by POS origin
 
@@ -53,6 +54,20 @@ When enabled, the module will:
 - Use filter **From POS** to see all POS-created orders
 - Group by **POS Config** or **POS Origin**
 
+### Quick Process Wizard
+
+The Quick Process wizard simplifies the entire PO workflow in a single screen:
+
+1. **Review PO**: View order details and confirm the purchase order
+2. **Receive Inventory**: Validate receipts and receive all items
+3. **Create Bill**: Generate vendor bill with auto-filled reference
+4. **Register Payment**: Record payment and reconcile with the bill
+
+To use:
+1. Open any Purchase Order
+2. Click **Quick Process** button in the top-right button box
+3. Follow the step-by-step wizard
+
 ## Technical Details
 
 ### Models Extended
@@ -71,10 +86,17 @@ When enabled, the module will:
 | `pos_receipt_image` | Binary | Uploaded receipt image |
 | `pos_paid_with_cash` | Boolean | Paid from POS cash drawer |
 
+### New Models
+
+| Model | Type | Description |
+|-------|------|-------------|
+| `po.quick.process` | Transient | Wizard for quick PO processing |
+
 ### Dependencies
 
 - `point_of_sale`
 - `purchase`
+- `purchase_stock`
 - `account`
 
 ## Translations

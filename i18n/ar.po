@@ -171,3 +171,188 @@ msgstr "تحذير: لم يتم تسجيل الدفع. يرجى مراجعة س�
 #. module: pos_create_purchase_order
 msgid "%s - Cash Out - Purchase Order: %s"
 msgstr "%s - سحب نقدي - أمر الشراء: %s"
+
+#. module: pos_create_purchase_order
+#. Quick Process Wizard
+msgid "Quick Process Purchase Order"
+msgstr "معالجة سريعة لأمر الشراء"
+
+#. module: pos_create_purchase_order
+msgid "Quick Process"
+msgstr "معالجة سريعة"
+
+#. module: pos_create_purchase_order
+msgid "Review PO"
+msgstr "مراجعة أمر الشراء"
+
+#. module: pos_create_purchase_order
+msgid "Receive Inventory"
+msgstr "استلام المخزون"
+
+#. module: pos_create_purchase_order
+msgid "Create Bill"
+msgstr "إنشاء فاتورة"
+
+#. module: pos_create_purchase_order
+msgid "Link Payment"
+msgstr "ربط الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Done"
+msgstr "تم"
+
+#. module: pos_create_purchase_order
+msgid "Step 1: Review Purchase Order"
+msgstr "الخطوة 1: مراجعة أمر الشراء"
+
+#. module: pos_create_purchase_order
+msgid "Step 2: Receive Inventory"
+msgstr "الخطوة 2: استلام المخزون"
+
+#. module: pos_create_purchase_order
+msgid "Step 3: Create Vendor Bill"
+msgstr "الخطوة 3: إنشاء فاتورة المورد"
+
+#. module: pos_create_purchase_order
+msgid "Step 4: Register Payment"
+msgstr "الخطوة 4: تسجيل الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Confirm Purchase Order"
+msgstr "تأكيد أمر الشراء"
+
+#. module: pos_create_purchase_order
+msgid "Next: Receive Inventory"
+msgstr "التالي: استلام المخزون"
+
+#. module: pos_create_purchase_order
+msgid "All items have been received!"
+msgstr "تم استلام جميع الأصناف!"
+
+#. module: pos_create_purchase_order
+msgid "Pending receipts:"
+msgstr "إيصالات معلقة:"
+
+#. module: pos_create_purchase_order
+msgid "No receipts found for this order."
+msgstr "لم يتم العثور على إيصالات لهذا الطلب."
+
+#. module: pos_create_purchase_order
+msgid "View Receipts"
+msgstr "عرض الإيصالات"
+
+#. module: pos_create_purchase_order
+msgid "Receive All Items"
+msgstr "استلام جميع الأصناف"
+
+#. module: pos_create_purchase_order
+msgid "Next: Create Bill"
+msgstr "التالي: إنشاء الفاتورة"
+
+#. module: pos_create_purchase_order
+msgid "Back"
+msgstr "رجوع"
+
+#. module: pos_create_purchase_order
+msgid "Vendor bill has been created!"
+msgstr "تم إنشاء فاتورة المورد!"
+
+#. module: pos_create_purchase_order
+msgid "Create a vendor bill to record the expense."
+msgstr "إنشاء فاتورة مورد لتسجيل المصروف."
+
+#. module: pos_create_purchase_order
+msgid "View Bill"
+msgstr "عرض الفاتورة"
+
+#. module: pos_create_purchase_order
+msgid "Post Bill"
+msgstr "ترحيل الفاتورة"
+
+#. module: pos_create_purchase_order
+msgid "Next: Payment"
+msgstr "التالي: الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Bill has been fully paid!"
+msgstr "تم دفع الفاتورة بالكامل!"
+
+#. module: pos_create_purchase_order
+msgid "Amount Due"
+msgstr "المبلغ المستحق"
+
+#. module: pos_create_purchase_order
+msgid "Payment Details"
+msgstr "تفاصيل الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Payment Amount"
+msgstr "مبلغ الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Payment Journal"
+msgstr "يومية الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Payment Date"
+msgstr "تاريخ الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Memo"
+msgstr "ملاحظة"
+
+#. module: pos_create_purchase_order
+msgid "Existing Payments"
+msgstr "المدفوعات الحالية"
+
+#. module: pos_create_purchase_order
+msgid "Register Payment"
+msgstr "تسجيل الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Skip Payment"
+msgstr "تخطي الدفع"
+
+#. module: pos_create_purchase_order
+msgid "Process Complete!"
+msgstr "اكتملت المعالجة!"
+
+#. module: pos_create_purchase_order
+msgid "has been processed."
+msgstr "تمت معالجته."
+
+#. module: pos_create_purchase_order
+msgid "Close"
+msgstr "إغلاق"
+
+#. module: pos_create_purchase_order
+msgid "POS Order"
+msgstr "طلب نقطة البيع"
+
+#. module: pos_create_purchase_order
+msgid "Receipts"
+msgstr "الإيصالات"
+
+#. module: pos_create_purchase_order
+msgid "Vendor Bill"
+msgstr "فاتورة المورد"
+
+#. module: pos_create_purchase_order
+msgid "Vendor Bills"
+msgstr "فواتير الموردين"
+
+#. module: pos_create_purchase_order
+msgid "Please select a payment journal."
+msgstr "يرجى اختيار يومية الدفع."
+
+#. module: pos_create_purchase_order
+msgid "Payment amount must be greater than zero."
+msgstr "يجب أن يكون مبلغ الدفع أكبر من صفر."
+
+#. module: pos_create_purchase_order
+msgid "No unpaid bills found. Please post the bill first."
+msgstr "لم يتم العثور على فواتير غير مدفوعة. يرجى ترحيل الفاتورة أولاً."
+
+#. module: pos_create_purchase_order
+msgid "Payment for %s"
+msgstr "دفعة لـ %s"
