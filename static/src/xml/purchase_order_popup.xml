@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_create_purchase_order.PurchaseOrderPopup">
+        <Dialog title="'Create Purchase Order'" size="'md'">
+            <div class="purchase-order-popup p-3">
+                <!-- Order Summary -->
+                <div class="mb-4 p-3 bg-light rounded">
+                    <h5 class="mb-2">Order Summary</h5>
+                    <div class="d-flex justify-content-between">
+                        <span>Total Amount:</span>
+                        <strong><t t-esc="totalAmount"/> <t t-esc="pos.currency.symbol"/></strong>
+                    </div>
+                </div>
+
+                <!-- Pay with POS Cash Option -->
+                <div class="mb-4">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox"
+                               id="payWithCash"
+                               t-att-checked="state.payWithCash"
+                               t-on-change="(ev) => this.onPayWithCashChange(ev)"/>
+                        <label class="form-check-label" for="payWithCash">
+                            <strong>Pay with POS Cash</strong>
+                            <br/>
+                            <small class="text-muted">Record payment from POS cash drawer</small>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Bill Reference -->
+                <div class="mb-4">
+                    <label for="billReference" class="form-label">
+                        <strong>Bill/Invoice Reference</strong>
+                    </label>
+                    <input type="text" class="form-control"
+                           id="billReference"
+                           placeholder="Enter vendor bill reference..."
+                           t-att-value="state.billReference"
+                           t-on-input="(ev) => this.onBillReferenceChange(ev)"/>
+                </div>
+
+                <!-- Receipt Image -->
+                <div class="mb-4">
+                    <label class="form-label">
+                        <strong>Receipt/Invoice Image</strong>
+                    </label>
+                    <t t-if="!state.receiptImagePreview">
+                        <div class="border rounded p-4 text-center">
+                            <input type="file"
+                                   accept="image/*"
+                                   capture="environment"
+                                   class="d-none"
+                                   t-ref="fileInput"
+                                   t-on-change="(ev) => this.onImageSelect(ev)"/>
+                            <button class="btn btn-outline-primary btn-lg"
+                                    t-on-click="() => this.__owl__.refs.fileInput.click()">
+                                <i class="fa fa-camera me-2"/>
+                                Take Photo / Upload Image
+                            </button>
+                            <p class="text-muted mt-2 mb-0">
+                                <small>Capture or upload vendor receipt image</small>
+                            </p>
+                        </div>
+                    </t>
+                    <t t-else="">
+                        <div class="border rounded p-2 text-center position-relative">
+                            <img t-att-src="state.receiptImagePreview"
+                                 class="img-fluid rounded"
+                                 style="max-height: 200px;"/>
+                            <button class="btn btn-danger btn-sm position-absolute top-0 end-0 m-2"
+                                    t-on-click="() => this.removeImage()">
+                                <i class="fa fa-times"/>
+                            </button>
+                        </div>
+                    </t>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-flex gap-2 justify-content-end mt-4">
+                    <button class="btn btn-secondary btn-lg" t-on-click="() => this.cancel()">
+                        <i class="fa fa-times me-1"/> Cancel
+                    </button>
+                    <button class="btn btn-primary btn-lg" t-on-click="() => this.confirm()">
+                        <i class="fa fa-check me-1"/> Create Purchase Order
+                    </button>
+                </div>
+            </div>
+        </Dialog>
+    </t>
+</templates>

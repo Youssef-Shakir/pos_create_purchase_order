@@ -1,0 +1,173 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_create_purchase_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: 2024-01-01 00:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: Arabic\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+
+#. module: pos_create_purchase_order
+msgid "Create Purchase Order"
+msgstr "إنشاء أمر شراء"
+
+#. module: pos_create_purchase_order
+msgid "Order Summary"
+msgstr "ملخص الطلب"
+
+#. module: pos_create_purchase_order
+msgid "Total Amount:"
+msgstr "المبلغ الإجمالي:"
+
+#. module: pos_create_purchase_order
+msgid "Pay with POS Cash"
+msgstr "الدفع من صندوق نقطة البيع"
+
+#. module: pos_create_purchase_order
+msgid "Record payment from POS cash drawer"
+msgstr "تسجيل الدفع من درج النقود"
+
+#. module: pos_create_purchase_order
+msgid "Bill/Invoice Reference"
+msgstr "مرجع الفاتورة"
+
+#. module: pos_create_purchase_order
+msgid "Enter vendor bill reference..."
+msgstr "أدخل مرجع فاتورة المورد..."
+
+#. module: pos_create_purchase_order
+msgid "Receipt/Invoice Image"
+msgstr "صورة الإيصال/الفاتورة"
+
+#. module: pos_create_purchase_order
+msgid "Take Photo / Upload Image"
+msgstr "التقاط صورة / رفع صورة"
+
+#. module: pos_create_purchase_order
+msgid "Capture or upload vendor receipt image"
+msgstr "التقاط أو رفع صورة إيصال المورد"
+
+#. module: pos_create_purchase_order
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: pos_create_purchase_order
+msgid "No Vendor"
+msgstr "لا يوجد مورد"
+
+#. module: pos_create_purchase_order
+msgid "Please select a customer/vendor or configure a default vendor in POS settings."
+msgstr "يرجى اختيار عميل/مورد أو تحديد مورد افتراضي في إعدادات نقطة البيع."
+
+#. module: pos_create_purchase_order
+msgid "Empty Order"
+msgstr "طلب فارغ"
+
+#. module: pos_create_purchase_order
+msgid "Please add at least one product to create a purchase order."
+msgstr "يرجى إضافة منتج واحد على الأقل لإنشاء أمر شراء."
+
+#. module: pos_create_purchase_order
+msgid "Purchase Order %s created successfully!"
+msgstr "تم إنشاء أمر الشراء %s بنجاح!"
+
+#. module: pos_create_purchase_order
+msgid "Payment recorded from POS cash."
+msgstr "تم تسجيل الدفع من صندوق نقطة البيع."
+
+#. module: pos_create_purchase_order
+msgid "Failed to create Purchase Order: "
+msgstr "فشل في إنشاء أمر الشراء: "
+
+#. module: pos_create_purchase_order
+msgid "Purchase Orders"
+msgstr "أوامر الشراء"
+
+#. module: pos_create_purchase_order
+msgid "Enable creating purchase orders directly from POS"
+msgstr "تمكين إنشاء أوامر الشراء مباشرة من نقطة البيع"
+
+#. module: pos_create_purchase_order
+msgid "PO State"
+msgstr "حالة أمر الشراء"
+
+#. module: pos_create_purchase_order
+msgid "Default Vendor"
+msgstr "المورد الافتراضي"
+
+#. module: pos_create_purchase_order
+msgid "RFQ"
+msgstr "طلب عرض سعر"
+
+#. module: pos_create_purchase_order
+msgid "RFQ Sent"
+msgstr "تم إرسال طلب عرض السعر"
+
+#. module: pos_create_purchase_order
+msgid "To Approve"
+msgstr "للموافقة"
+
+#. module: pos_create_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: pos_create_purchase_order
+msgid "Locked"
+msgstr "مقفل"
+
+#. module: pos_create_purchase_order
+msgid "From POS"
+msgstr "من نقطة البيع"
+
+#. module: pos_create_purchase_order
+msgid "POS Config"
+msgstr "إعداد نقطة البيع"
+
+#. module: pos_create_purchase_order
+msgid "Purchase Orders from POS"
+msgstr "أوامر الشراء من نقطة البيع"
+
+#. module: pos_create_purchase_order
+msgid "Vendor Bill Reference"
+msgstr "مرجع فاتورة المورد"
+
+#. module: pos_create_purchase_order
+msgid "Receipt Image"
+msgstr "صورة الإيصال"
+
+#. module: pos_create_purchase_order
+msgid "Paid with POS Cash"
+msgstr "مدفوع من صندوق نقطة البيع"
+
+#. module: pos_create_purchase_order
+msgid "POS Payment"
+msgstr "دفعة نقطة البيع"
+
+#. module: pos_create_purchase_order
+msgid "POS Purchase: %s - %s"
+msgstr "شراء نقطة البيع: %s - %s"
+
+#. module: pos_create_purchase_order
+msgid "Purchase Order: %s"
+msgstr "أمر الشراء: %s"
+
+#. module: pos_create_purchase_order
+msgid "Payment"
+msgstr "الدفعة"
+
+#. module: pos_create_purchase_order
+msgid "Warning: Payment could not be recorded. Please check the Odoo log for details."
+msgstr "تحذير: لم يتم تسجيل الدفع. يرجى مراجعة سجل Odoo للحصول على التفاصيل."
+
+#. module: pos_create_purchase_order
+msgid "%s - Cash Out - Purchase Order: %s"
+msgstr "%s - سحب نقدي - أمر الشراء: %s"
